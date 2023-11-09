@@ -34,7 +34,7 @@ def create_app(redis=None):
 
         if redis is None:
             redis = await aioredis.from_url(
-                f"redis://{REDIS_HOST_DBG}:{REDIS_PORT_DBG}", encoding="utf8", decode_responses=True
+                f"redis://{REDIS_HOST}:{REDIS_PORT}", encoding="utf8", decode_responses=True
             )
         assert await redis.ping()
 
